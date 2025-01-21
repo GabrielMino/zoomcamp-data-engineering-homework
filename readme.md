@@ -163,10 +163,9 @@ ORDER BY max_tip DESC
 LIMIT 1;
 ```
 
-**Answer:** 
+**Answer:** JFK Airport
 
---- JFK Airport
-
+---
 ## Question 7. Terraform Workflow
 Which of the following sequences, respectively, describes the workflow for:
 
