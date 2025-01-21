@@ -72,7 +72,7 @@ During the period of October 1st 2019 (inclusive) and November 1st 2019 (exclusi
 
 Query: 
 
-'''sql
+```sql
 SELECT 
     COUNT(*) AS trip_count,
     CASE
@@ -88,7 +88,7 @@ WHERE lpep_pickup_datetime >= '2019-10-01'
   AND lpep_dropoff_datetime < '2019-11-01'
 GROUP BY distance_range
 ORDER BY distance_range;
-'''
+```
 
 **Answer:** 104,802; 198,924; 109,603; 27,678; 35,189
 
@@ -98,14 +98,15 @@ ORDER BY distance_range;
 Which was the pick up day with the longest trip distance? Use the pick up time for your calculations.
 
 Query:
-'''sql
+
+```sql
 SELECT DATE(lpep_pickup_datetime) AS pickup_day,
 MAX(trip_distance) AS longest_distance
 FROM green_taxi_trips
 GROUP BY DATE(lpep_pickup_datetime)
 ORDER BY longest_distance DESC
 LIMIT 1;
-'''
+```
 
 **Answer:** 2019-10-31
 
@@ -115,7 +116,8 @@ LIMIT 1;
 Which were the top pickup locations with over 13,000 in total_amount (across all trips) for 2019-10-18?
 
 Query: 
-'''sql
+
+```sql
 SELECT 
     loc."Zone" AS pickup_zone,
     trips.total_amount_sum
@@ -132,7 +134,7 @@ FROM (
 ) trips
 JOIN taxi_zone_trips loc
 ON trips.pickup_location = loc."LocationID";
-'''
+```
 
 **Answer:** East Harlem North, East Harlem South, Morningside Heights
 
@@ -143,7 +145,7 @@ For the passengers picked up in October 2019 in the zone name "East Harlem North
 
 Query:
 
-'''sql
+```sql
 SELECT 
     loc."Zone",
     MAX(t.tip_amount) AS max_tip
@@ -159,7 +161,7 @@ GROUP BY
     loc."Zone"
 ORDER BY max_tip DESC
 LIMIT 1;
-'''
+```
 
 **Answer:** 
 
