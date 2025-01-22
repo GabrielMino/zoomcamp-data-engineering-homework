@@ -10,6 +10,7 @@ To find out the version of pip in the python:3.12.8 image, you can run the follo
 
 
 docker run -it python:3.12.8 bash
+
 pip --version
 
 **Answer:** 24.3.1
