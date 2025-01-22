@@ -8,10 +8,11 @@ Run docker with the python:3.12.8 image in an interactive mode, use the entrypoi
 
 To find out the version of pip in the python:3.12.8 image, you can run the following commands inside the Docker container:
 
-
+```
 docker run -it python:3.12.8 bash
 
 pip --version
+```
 
 **Answer:** 24.3.1
 
